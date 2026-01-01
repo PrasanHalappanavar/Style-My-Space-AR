@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for individual remove button floating above each model -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="4dp">
+
+    <ImageButton
+        android:id="@+id/btnRemoveModel"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/remove_button_circle"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        android:contentDescription="Remove this model"
+        android:scaleType="fitCenter"
+        android:padding="6dp" />
+
+</LinearLayout>

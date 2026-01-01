@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#6200EE"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orders Management"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageButton
+        android:id="@+id/btnReloadOrders"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:contentDescription="Reload"
+        android:layout_gravity="end"
+        android:padding="8dp"/>
+
+    <!-- Filter and Search Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp">
+
+        <!-- Search Bar -->
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Search by Order ID, User ID, or Transaction ID"
+            android:background="@drawable/rounded_edittext_bg"
+            android:padding="12dp"
+            android:drawableLeft="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp" />
+
+        <!-- Filter Buttons -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAllOrders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="All Orders"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_selected"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginRight="8dp" />
+
+                <Button
+                    android:id="@+id/btnPending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Pending"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_unselected"
+                    android:textColor="#666666"
+                    android:layout_marginRight="8dp" />
+
+                <Button
+                    android:id="@+id/btnProcessing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Processing"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_unselected"
+                    android:textColor="#666666"
+                    android:layout_marginRight="8dp" />
+
+                <Button
+                    android:id="@+id/btnShipped"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Shipped"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_unselected"
+                    android:textColor="#666666"
+                    android:layout_marginRight="8dp" />
+
+                <Button
+                    android:id="@+id/btnDelivered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Delivered"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_unselected"
+                    android:textColor="#666666"
+                    android:layout_marginRight="8dp" />
+
+                <Button
+                    android:id="@+id/btnCancelled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="Cancelled"
+                    android:textSize="12sp"
+                    android:background="@drawable/filter_button_unselected"
+                    android:textColor="#666666" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- Orders Count -->
+    <TextView
+        android:id="@+id/ordersCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Orders: 0"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333333" />
+
+    <!-- RecyclerView for Orders -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ordersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:visibility="visible" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_menu_agenda"
+            android:alpha="0.3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No orders found"
+            android:textSize="18sp"
+            android:textColor="#666666"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orders will appear here when customers place them"
+            android:textSize="14sp"
+            android:textColor="#999999"
+            android:layout_marginTop="8dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/nav_item_selector"
+        app:itemTextColor="@drawable/nav_item_selector"
+        app:menu="@menu/admin_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</LinearLayout>

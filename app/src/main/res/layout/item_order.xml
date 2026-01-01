@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB">
+
+    <!-- Scrollable Order Content -->
+    <ScrollView
+        android:id="@+id/orderScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edittext_bg"
+            android:padding="12dp">
+
+            <!-- Order ID -->
+            <TextView
+                android:id="@+id/orderIdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order ID"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <!-- Order Status -->
+            <TextView
+                android:id="@+id/orderStatusChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:padding="4dp"
+                android:background="@drawable/status_chip_pending"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="4dp" />
+
+            <!-- Order Date -->
+            <TextView
+                android:id="@+id/orderDateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:layout_marginTop="4dp" />
+
+            <!-- Total Amount -->
+            <TextView
+                android:id="@+id/totalAmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹0.00"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+
+            <!-- Customer -->
+            <TextView
+                android:id="@+id/customerIdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:layout_marginTop="4dp" />
+
+            <!-- Items Summary -->
+            <TextView
+                android:id="@+id/itemsSummaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Items"
+                android:layout_marginTop="4dp" />
+
+            <!-- Payment Method -->
+            <TextView
+                android:id="@+id/paymentMethodText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Method"
+                android:layout_marginTop="4dp" />
+
+            <!-- Payment Status -->
+            <TextView
+                android:id="@+id/paymentStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Status"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold" />
+
+            <!-- Transaction ID -->
+            <TextView
+                android:id="@+id/transactionIdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transaction ID"
+                android:layout_marginTop="4dp" />
+
+            <!-- Shipping Address -->
+            <TextView
+                android:id="@+id/shippingAddressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shipping Address"
+                android:layout_marginTop="4dp" />
+
+            <!-- Buttons Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/btnViewDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Details" />
+
+                <Button
+                    android:id="@+id/btnUpdateStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update Status"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

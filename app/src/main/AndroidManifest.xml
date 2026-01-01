@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+
+    <!-- Network state permission -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!-- UPI App queries for Android 11+ -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="upi" />
+        </intent>
+
+        <!-- Popular UPI Apps -->
+        <package android:name="com.google.android.apps.nbu.paisa.user" />  <!-- Google Pay -->
+        <package android:name="com.phonepe.app" />                          <!-- PhonePe -->
+        <package android:name="net.one97.paytm" />                         <!-- Paytm -->
+        <package android:name="in.org.npci.upiapp" />                      <!-- BHIM -->
+        <package android:name="com.amazon.mShop.android.shopping" />       <!-- Amazon Pay -->
+        <package android:name="com.freecharge.android" />                  <!-- Freecharge -->
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UploadingData"
+        tools:targetApi="31">
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".AdminLoginActivity" />
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".Add_products" />
+        <activity android:name=".AdminOrdersActivity" />
+        <activity android:name=".UsersActivity" />
+        <activity android:name=".UserHomeActivity" />
+        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".TestPaymentActivity" />
+        <activity android:name=".PaymentVerificationActivity" />
+
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"/>
+    </application>
+
+</manifest>

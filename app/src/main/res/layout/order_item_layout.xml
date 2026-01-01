@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Order Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/orderIdText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Order ID: ORD123456789"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/orderStatusChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pending"
+                android:background="@drawable/status_chip_pending"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:padding="8dp"
+                android:elevation="2dp" />
+
+        </LinearLayout>
+
+        <!-- Order Date and Amount -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/orderDateText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Aug 8, 2025 • 10:22 PM"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:drawableLeft="@android:drawable/ic_menu_recent_history"
+                android:drawablePadding="4dp" />
+
+            <TextView
+                android:id="@+id/totalAmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹11.00"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32" />
+
+        </LinearLayout>
+
+        <!-- Customer Info -->
+        <TextView
+            android:id="@+id/customerIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Customer: 0NWDJVabRCUMD3F5Iv4G1a9qxBC3"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"
+            android:drawableLeft="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="4dp" />
+
+        <!-- Items Summary -->
+        <TextView
+            android:id="@+id/itemsSummaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1 item(s): warehouse"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@android:drawable/ic_menu_view"
+            android:drawablePadding="4dp" />
+
+        <!-- Payment Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/paymentMethodText"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="UPI Payment"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+                android:drawablePadding="4dp" />
+
+            <TextView
+                android:id="@+id/paymentStatusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUCCESS"
+                android:textSize="12sp"
+                android:textColor="#4CAF50"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Transaction ID -->
+        <TextView
+            android:id="@+id/transactionIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TXN: TXN1754671972872"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"
+            android:drawableLeft="@android:drawable/ic_menu_info_details"
+            android:drawablePadding="4dp" />
+
+        <!-- Shipping Address -->
+        <TextView
+            android:id="@+id/shippingAddressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address: Address pending"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"
+            android:drawableLeft="@android:drawable/ic_menu_mapmode"
+            android:drawablePadding="4dp" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnViewDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="View Details"
+                android:textSize="12sp"
+                android:background="@drawable/outline_button"
+                android:textColor="#6200EE"
+                android:layout_marginRight="8dp" />
+
+            <Button
+                android:id="@+id/btnUpdateStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Update Status"
+                android:textSize="12sp"
+                android:background="@drawable/rounded_button_primary"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

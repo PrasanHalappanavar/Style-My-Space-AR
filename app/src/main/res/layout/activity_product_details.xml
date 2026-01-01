@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Product Image Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="6dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Product Name + AR Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Product Name"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="#333333" />
+
+            <ImageButton
+                android:id="@+id/btnAR"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_button"
+                android:padding="10dp"
+                android:contentDescription="View in AR"
+                android:src="@drawable/ic_ar_rotate" />
+        </LinearLayout>
+
+        <!-- Price & Category Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/productPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price: ₹0.0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#6200EE"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/productCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category: Chair"
+                    android:textSize="18sp"
+                    android:textColor="#555555" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Product Details Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Details"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:elevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/productDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Elegant wooden table with fine polish and strong legs."
+                android:textSize="16sp"
+                android:textColor="#444444" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quantity Controls -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/btnMinus"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_button_grey"
+                android:src="@drawable/ic_minus"
+                android:contentDescription="Decrease quantity" />
+
+            <TextView
+                android:id="@+id/quantityText"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/rounded_button_grey"
+                android:src="@drawable/ic_plus"
+                android:contentDescription="Increase quantity" />
+        </LinearLayout>
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ADD TO CART"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="true"
+            android:padding="12dp"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+</ScrollView>
